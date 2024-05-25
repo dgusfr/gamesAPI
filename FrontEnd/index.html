@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Games</title>
+  <hr>
+  <h4>Lista de Games</h4>
+  <ul id="games"></ul>
+</head>
+
+<body>
+  <h1>Olá</h1>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<script>
+  axios.get("http://localhost:8000/games").then(response => {
+    var games = response.data;
+    var lista = document.getElementById("games");
+
+    games.forEach(game => {
+      var item = document.createElement("li")
+      item.innerHTML = game.id + " - " + game.title + " - " + game.price;
+      lista.appendChild(item)
+    });
+
+
+
+  }).catch(error => {
+    console.log(error);
+  })
+</script>
+
+</html>
