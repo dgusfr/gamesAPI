@@ -16,7 +16,6 @@ hr {
   margin: 20px 0;
 }
 
-/* Estilos da Lista de Games */
 #games {
   list-style-type: none;
   padding: 0;
@@ -34,19 +33,25 @@ hr {
 }
 
 #games li button {
-  margin-left: 10px;
-  background-color: #f44336;
-  color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
 }
 
-#games li button.edit-btn {
-  background-color: #4caf50;
+/* Centraliza os botões à direita */
+#games li {
+  position: relative; /* Adiciona posicionamento relativo */
 }
 
+#games li button {
+  position: absolute; /* Adiciona posicionamento absoluto */
+  right: 10px; /* Alinha os botões à direita */
+}
+
+#games li button + button {
+  right: 90px; /* Ajusta o espaçamento entre os botões */
+}
 /* Estilos dos Formulários */
 input[type="text"],
 input[type="number"] {
